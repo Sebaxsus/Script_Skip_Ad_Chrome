@@ -1,0 +1,23 @@
+{
+    "manifest_version":3,
+    "name": "Click Virtual",
+    "version": "1.0",
+    "description": "Forzar clic en el botón de saltar anuncio en YouTube",
+    "permissions": ["scripting", "activeTab"],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "matches": [
+            "*://www.youtube.com/*",
+            "*://www.google.com/*"
+        ], 
+        "js": ["content.js"],
+        "run_at": "document_idle"
+    }],
+    "host_permissions": [
+        "*://www.youtube.com/*"
+    ],
+    "author": "Sebaxsus",
+    "incognito": "spanning"
+}
