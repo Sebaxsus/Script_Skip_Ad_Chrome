@@ -9,7 +9,25 @@ import logging, pathlib
 
 class Script_Logger:
     """
-    
+    Inicializa un objeto tipo `(logger)` que escucha los Eventos desde el Nivel de Gravedad `logger.DEBUG`,
+
+    Para el Obtener la Ruta en donde Generara el Archivo `Skip_Ad_Logs.log`, Utiliza la Dependencia `pathlib`
+    Usando el metodo `.Path()` iniciando desde la direccion en donde se ejecuto el Script.
+
+    Tambien establece dos objetos `(logger)` del tipo `Handler`:
+    1. **ConsoleLogger:**
+        - Se encarga de Loggear en la Consola los logs del Nivel de Gravedad `logger.DEBUG` o Mayor.
+    2. **FileLogger:**
+        - Se encarga de Loggear en el Archivo `Skip_Ad_Logs.log` todos los logs desde el Nivel de Gravedad `logger.INFO` hacia arriba.
+
+    El Formato en el que Genera los Logs es `Mes-Dia Hora:Minuto AM/PM - Logger.root.name - Type: [Logger.levelname] - Msg: Log.text`
+
+    **Metodos:**
+        **get_logger():**
+            **Parametros/Argumentos:**
+                `None`
+            **Devuelve/Retorna:**
+                `(object logging.Logger)`
     """
     def __init__(self):
         # Inicializando un Logger y estableciendo el Nivel minimo de Escucha

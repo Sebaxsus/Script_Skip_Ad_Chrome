@@ -71,7 +71,8 @@ def BuscarBoton(page: playwright.sync_api.Page) -> bool:
                 return False
                 break
             else:
-                logger.debug("🔍 Botón no encontrado, reintentando...")
+                # logger.debug("🔍 Botón no encontrado, reintentando...")
+                pass
         except Exception as e:
             if ("context or browser has been closed" in str(e)):
                 clearScreen()
@@ -111,7 +112,7 @@ def main():
             if BuscarBoton(youtube_page):
                 break
             # Esperar 30 Segundos antes de Volver a buscar el boton de Skip.
-            logger.info("Se salto un anuncion Con exito! 🫡")
+            logger.info("Se salto un anuncio Con exito! 🫡")
             time.sleep(30)
 
 main()
