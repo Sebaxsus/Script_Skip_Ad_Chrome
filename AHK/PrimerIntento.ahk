@@ -41,6 +41,37 @@ RecorrerUnProcesso() {
     MsgBox list " Total: " WinGetCount("ahk_exe chrome.exe")
 }
 
+MButton::{
+    ; MsgBox "Version Actual: " A_AhkVersion
+    MouseGetPos(&currentX, &currentY, &currentId)
+
+    ChromeId := GetYouTubeID("YouTube")
+
+    WinMoveTop("ahk_id " ChromeId)
+
+    scale := GetProcessDpi(ChromeId) / 96
+
+    ; Si la scala es 1 Significa que se Activo el Script desde la Pantalla Principal
+    ; ToolTip(" " currentX " " currentY)
+    if (GetProcessDpi(currentId) / 96) > 1 {
+        RealX := Round(1435 * scale) - 30 
+        RealY := Round(740 * scale)
+        currentX := Round(currentX * scale)
+        currentY := Round(currentY * scale)
+    } else {
+        RealX := 1920 + (Round(1435 * scale) - 30 )
+        RealY := Round(740 * scale)
+    }
+
+
+    Click(RealX,RealY)
+
+    WinActivate("ahk_id " currentId)
+
+    MouseMove(currentX, currentY)
+    
+}
+
 ; ShortCut para obtener el Escalado de la GUI en la Posicion actual del Mouse
 ^3::{
     MouseGetPos(&x, &y, &id)
@@ -60,7 +91,7 @@ RecorrerUnProcesso() {
     scale := GetProcessDpi(ChromeId) / 96
 
     ; Si la scala es 1 Significa que se Activo el Script desde la Pantalla Principal
-    ToolTip(" " currentX " " currentY)
+    ; ToolTip(" " currentX " " currentY)
     if (GetProcessDpi(currentId) / 96) > 1 {
         RealX := Round(1435 * scale) - 30 
         RealY := Round(580 * scale)
@@ -118,8 +149,15 @@ RecorrerUnProcesso() {
                 scale := GetProcessDpi(ChromeId) / 96 ; 96 = 100%
 
 
-                RealX := 1920 + Round(1435 * scale)
-                RealY := Round(580 * scale)
+                 if (GetProcessDpi(currentWin) / 96) > 1 {
+                    RealX := Round(1435 * scale) - 30 
+                    RealY := Round(580 * scale)
+                    currentX := Round(currentX * scale)
+                    currentY := Round(currentY * scale)
+                } else {
+                    RealX := 1920 + (Round(1435 * scale) - 30 )
+                    RealY := Round(580 * scale)
+                }
 
                 ; MsgBox("Second Monitor W: " windowW " H: " windowH " offSetX: " Window_offSetx " offSetY: " Window_offSetY " Real X " RealX " Y " RealY)
 

@@ -1,1 +1,11 @@
+# Ignorando el Entorno Virtual
 /Py/EnvVirtual
+
+# Ignorando todos los Archivos .json
+# Ya que en ese formato se guardan las Cookies
+*.json
+/DataText/youtube_cookies.json
+
+# Ignorando el Cache generado por la Librerias y Procesos de Python
+/__pycache__
+*.pyc
