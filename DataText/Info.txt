@@ -1,0 +1,1 @@
+Datos encontrados  <BrowserContext browser=<Browser type=<BrowserType name=chromium executable_path=C:\Users\sebax\AppData\Local\ms-playwright\chromium-1169\chrome-win\chrome.exe> version=136.0.7103.116>>
