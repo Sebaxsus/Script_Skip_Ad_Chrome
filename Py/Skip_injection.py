@@ -26,6 +26,9 @@ El Flujo de este script es
 import asyncio, time, playwright.sync_api, os
 from playwright.sync_api import sync_playwright
 
+from Logger import Script_Logger
+
+logger = Script_Logger().get_Logger()
 Anuncios_Saltados = 0
 
 def clearScreen():
@@ -52,6 +55,8 @@ def BuscarBoton(page: playwright.sync_api.Page) -> bool:
         **page:**
     """
     global Anuncios_Saltados
+    global logger
+
     Flag = True
     # Intentar hacer clic repetidamente en el botón "Saltar anuncio"
     while Flag:
@@ -59,33 +64,34 @@ def BuscarBoton(page: playwright.sync_api.Page) -> bool:
             button = page.query_selector("button.ytp-skip-ad-button")
             if button:
                 clearScreen()
-                print("🎯 Botón encontrado, intentando clic...")
+                logger.debug("🎯 Botón encontrado, intentando clic...")
                 button.click()
                 Anuncios_Saltados += 1
                 Flag = False
                 return False
                 break
             else:
-                print("🔍 Botón no encontrado, reintentando...")
+                logger.debug("🔍 Botón no encontrado, reintentando...")
         except Exception as e:
             if ("context or browser has been closed" in str(e)):
                 clearScreen()
-                print("🚪 Contexto o navegador cerrado.\nAnuncios Saltados: ", Anuncios_Saltados)
+                logger.info(f"🚪 Contexto o navegador cerrado.\nAnuncios Saltados: {Anuncios_Saltados}")
                 return True
-            print("⚠️ Error al hacer clic:", e)
+            # print("⚠️ Error al hacer clic:", e)
+            logger.exception(msg="⚠️ Error al hacer clic:",exc_info=e)
         time.sleep(1)
 
 def main():
     with sync_playwright() as p:
         try:
-            print("Contectando al WebSocket http://localhost:9222/ ...")
+            logger.debug("Contectando al WebSocket http://localhost:9222/ ...")
             # Conectar con el navegador ya abierto
             browser = p.chromium.connect_over_cdp("http://localhost:9222/")
             context = browser.contexts[0]
-
+            logger.info("Se conecto al WebSocket de CDP: http://localhost:9222/")
             print("Datos encontrados ", context.pages)
         except Exception as e:
-            print("No se pudo conectar al WebSocket")
+            logger.exception(msg="No se pudo conectar al WebSocket",exc_info=e)
             return
 
         # Buscando la pestaña con YouTube
@@ -96,7 +102,7 @@ def main():
                 break
 
         if not youtube_page:
-            print("No se encontro ninguan pestaña de YouTube")
+            logger.info("No se encontro ninguan pestaña de YouTube")
             return
         
         youtube_page.bring_to_front()
@@ -104,6 +110,8 @@ def main():
         while True:
             if BuscarBoton(youtube_page):
                 break
-            time.sleep(5)
+            # Esperar 30 Segundos antes de Volver a buscar el boton de Skip.
+            logger.info("Se salto un anuncion Con exito! 🫡")
+            time.sleep(30)
 
 main()
