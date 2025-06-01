@@ -9,3 +9,6 @@
 # Ignorando el Cache generado por la Librerias y Procesos de Python
 /__pycache__
 *.pyc
+
+# Ignorando el Archivo que usa para los Test de el Modulo Logger
+/Py/test.py
