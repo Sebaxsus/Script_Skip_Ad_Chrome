@@ -69,7 +69,6 @@ def BuscarBoton(page: playwright.sync_api.Page) -> bool:
                 Anuncios_Saltados += 1
                 Flag = False
                 return False
-                break
             else:
                 # logger.debug("🔍 Botón no encontrado, reintentando...")
                 pass
@@ -114,5 +113,7 @@ def main():
             # Esperar 30 Segundos antes de Volver a buscar el boton de Skip.
             logger.info("Se salto un anuncio Con exito! 🫡")
             time.sleep(30)
+        
+        return
 
 main()

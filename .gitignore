@@ -1,3 +1,6 @@
+# Ignorando el .env
+.env
+
 # Ignorando el Entorno Virtual
 /Py/EnvVirtual
 
@@ -12,3 +15,9 @@
 
 # Ignorando el Archivo que usa para los Test de el Modulo Logger
 /Py/test.py
+
+# Ignorando Carpetas no utiles
+/Py/build
+/Py/dist
+/Py/DataText
+/Py/Skip_injection.spec

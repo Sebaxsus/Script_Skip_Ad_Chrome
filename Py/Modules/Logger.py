@@ -35,7 +35,14 @@ class Script_Logger:
         self.logger.setLevel(level=logging.DEBUG)
         # logging.basicConfig(format='%(asctime)s -> %(levelname)s: %(message)s', datefmt='%m-%d %I:%M %p', encoding="utf-8", level=logging.DEBUG)
         self.formatter = logging.Formatter(fmt='%(asctime)s - %(name)s - Type: [%(levelname)s] - Msg: %(message)s', datefmt='%m-%d %I:%M %p')
+        # Obteniendo el Path Absoluto de la Carpeta "DataText" usando de Base el Path de ejecucion del Script
         self.LogPath = pathlib.Path(__file__).parent.parent / "DataText"
+
+        # En caso de que no exista La carpeta "DataText" creala
+        # parents=True -- Si los directorios padres en este Caso "/DataText" no existe lo crea
+        # exist_ok=True -- Si ya existe, Evita la exepcion FileExistsError
+        # Es lo mismo que hacer if not self.LogPath.exist():
+        self.LogPath.mkdir(parents=True, exist_ok=True)
 
         # Creando el Logger Handler para la consola
         ConsoleLogger = logging.StreamHandler()
