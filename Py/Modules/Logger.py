@@ -28,6 +28,9 @@ class Script_Logger:
                 `None`
             **Devuelve/Retorna:**
                 `(object logging.Logger)`
+
+    ---
+        Autor: [Sebaxsus](https://github.com/Sebaxsus)
     """
     def __init__(self, logPath: str):
         # Inicializando un Logger y estableciendo el Nivel minimo de Escucha
@@ -64,6 +67,9 @@ class Script_Logger:
     def get_Logger(self) -> logging.Logger:
         """
         Devuelve el objeto ya instanciondo de la calase logging.Logger
+
+        ---
+        Autor: [Sebaxsus](https://github.com/Sebaxsus)
         """
         return self.logger
     

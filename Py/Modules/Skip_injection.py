@@ -28,13 +28,21 @@ class Skip_Script:
         clearScreen()
         BuscarBoton()
         main()
+
+    ---
+        Autor: [Sebaxsus](https://github.com/Sebaxsus)
     """
     def __init__(self, logger: logging.Logger):
         self.logger = logger
         self.Anuncios_Saltados = 0
 
     def clearScreen(self):
-        """Borra la pantalla en Windows o Linux/Mac."""
+        """
+        Borra la pantalla en Windows o Linux/Mac.
+        
+        ---
+        Autor: [Sebaxsus](https://github.com/Sebaxsus)
+        """
         if os.name == 'nt': # Windows
             os.system('cls')
         else: # Linux/Mac
@@ -53,8 +61,14 @@ class Skip_Script:
         Si no encuentra el boton:
             Vuelve a buscar el boton tras pasar 1 segundo
 
-        **Parametros/Argumentso:**
-            **page:**
+        **Parametros/Argumentos:**
+            **page:** `(object playwright.sync_api.Page)`
+
+        **Retorna/Devuelve:**
+            `(bool)`
+
+        ---
+        Autor: [Sebaxsus](https://github.com/Sebaxsus)
         """
 
         Flag = True
@@ -96,13 +110,16 @@ class Skip_Script:
         Si no encuentra una Devuelve `None`.
 
         **Parametros/Argumentos:**
-            **browser:** `(object playwright.sync_api.BrowserContext)`
+            **browser:** `(object playwright.sync_api.Browser)`
 
         **Retornar/Devuelve:**
             `(object playwright.sync_api.Page | None)`
+
+        ---
+        Autor: [Sebaxsus](https://github.com/Sebaxsus)
         """
         for context in browser.contexts:
-            print(f"Context: ", context.pages)
+            self.logger.debug(f"Context: ", context.pages)
             for page in context.pages:
                 if "youtube.com" in page.url:
                     return page
@@ -110,6 +127,28 @@ class Skip_Script:
         return None
 
     def main(self):
+        """
+        Funcion Principal que se encarga de conectarse a
+        un `websocket` de Chrome DevTools Protocol,
+        Verificar que dentro de las paginas halla una de YouTube,
+        Y luego llamar a las funciones necesarias.
+
+        PD: No quiero escribir mas jajasjdaj. Entonces lo resumo sin tecnisismos
+        Intenta conectarse a chrome por CDP 5 veces, SI no lo logra termina la Ejecucion
+
+        Luego intenta 5 veces encontrar dentro de los contextos un pestaña de YouTube,
+        Si no lo logra termina la Ejecucion.
+
+        Si la encuentra la pone al principio de las ventanas.
+
+        Luego empieza un Loop infinito buscar el boton de Skip en la ventana y 
+        cuando se cierre la Instancia A.K.A El proceso de Chrome termina la ejecucion.
+
+        👍
+
+        ---
+        Autor: [Sebaxsus](https://github.com/Sebaxsus)
+        """
         with sync_playwright() as p:
             # Intentando conectarse al socket de Chrome DevTools Protocol
             # Hace 5 intentos con una espera de 30 segundos entre intento
