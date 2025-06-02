@@ -13,6 +13,10 @@
 >
 > Por ende este **Aviso** se hace con la finalidad de **INFORMAR** que se pueden estar extrayendo las **COOKIES** de tu sesion local, Esto no quiere decir que se subira a la nube o se enviara a un servidor, Las Cookies se almacenan en la misma Carpeta del Proyecto Bajo el Directorio `./Extension_Skip_Ad_Chrome/DataText/youtube_cookies.json`.
 
+# To do
+- Toda la doc de Python y su Instalacion
+- Manual de Instalacion para AHK
+- Usar UV en lugar de `python -m venv` 🫠
 ## Tener En cuenta que el Script se Diseño para ser Usado en un Segunda Pantalla
 
 - Se requiere tener AHK 2.0^
