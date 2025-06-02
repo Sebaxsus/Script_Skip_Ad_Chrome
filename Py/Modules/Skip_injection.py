@@ -73,11 +73,15 @@ class Skip_Script:
                     # logger.debug("🔍 Botón no encontrado, reintentando...")
                     pass
             except Exception as e:
-                if ("context or browser has been closed" in str(e)):
+                if "context or browser has been closed" in str(e):
                     self.clearScreen()
                     self.logger.info(f"🚪 Contexto o navegador cerrado.\nAnuncios Saltados: {self.Anuncios_Saltados}")
                     return True
-                elif ("Execution context was destroyed" in str(e)):
+                elif "Execution context was destroyed" in str(e):
+                    # Si la pagina ya no es de YouTube Cerrando el Script :)
+                    if "youtube.com" not in page.url:
+                        self.logger.info(f"La página ya no es YouTube.\nAnuncios Saltados: {self.Anuncios_Saltados}")
+                        return True
                     self.logger.warning("⚠️ El contexto de ejecución fue destruido. La página probablemente cambió o recargó. Reintentando en breve...")
                 else:  
                     self.logger.exception(msg="⚠️ Error al hacer clic:",exc_info=e)
@@ -122,7 +126,7 @@ class Skip_Script:
                     self.logger.debug("No se pudo conectar al WebSocket, Reintentando en 10 Segundos...")
                     time.sleep(10)
             # Si no se conecta correctamente y obtiene un browser Termina el Loop
-            if not browser:
+            if not browser or not browser.is_connected():
                 self.logger.exception(msg="No se pudo conectar al WebSocket",exc_info=e)
                 return
             
@@ -132,7 +136,7 @@ class Skip_Script:
                 browser = p.chromium.connect_over_cdp("http://localhost:9222/")
                 self.logger.debug(f"Buscando una pestaña de YouTube")
                 youtube_page = self.Buscar_pestañaYT(browser)
-                self.logger.debug(f"Termino de buscar {youtube_page}")
+                # self.logger.debug(f"Termino de buscar {youtube_page}")
                 if not youtube_page:
                     self.logger.debug(f"No se encontro ninguna pestaña de YouTube, Reintentando en 30 segundos")
                     time.sleep(30)

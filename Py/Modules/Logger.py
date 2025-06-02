@@ -54,9 +54,10 @@ class Script_Logger:
         FileLogger.setLevel(level=logging.INFO)
         FileLogger.setFormatter(fmt=self.formatter)
 
-        # Agregando los objetos handler al objeto Logger
-        self.logger.addHandler(hdlr=ConsoleLogger)
-        self.logger.addHandler(hdlr=FileLogger)
+        # Agregando los objetos handler al objeto Logger en caso de que no existan
+        if not self.logger.handlers:
+            self.logger.addHandler(hdlr=ConsoleLogger)
+            self.logger.addHandler(hdlr=FileLogger)
 
         self.logger.info("Se inicializo el Logger!")
 
