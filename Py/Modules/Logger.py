@@ -29,14 +29,14 @@ class Script_Logger:
             **Devuelve/Retorna:**
                 `(object logging.Logger)`
     """
-    def __init__(self):
+    def __init__(self, logPath: str):
         # Inicializando un Logger y estableciendo el Nivel minimo de Escucha
         self.logger = logging.getLogger(__name__)
         self.logger.setLevel(level=logging.DEBUG)
         # logging.basicConfig(format='%(asctime)s -> %(levelname)s: %(message)s', datefmt='%m-%d %I:%M %p', encoding="utf-8", level=logging.DEBUG)
         self.formatter = logging.Formatter(fmt='%(asctime)s - %(name)s - Type: [%(levelname)s] - Msg: %(message)s', datefmt='%m-%d %I:%M %p')
         # Obteniendo el Path Absoluto de la Carpeta "DataText" usando de Base el Path de ejecucion del Script
-        self.LogPath = pathlib.Path(__file__).parent.parent / "DataText"
+        self.LogPath = logPath
 
         # En caso de que no exista La carpeta "DataText" creala
         # parents=True -- Si los directorios padres en este Caso "/DataText" no existe lo crea
@@ -61,6 +61,8 @@ class Script_Logger:
         self.logger.info("Se inicializo el Logger!")
 
     def get_Logger(self) -> logging.Logger:
-
+        """
+        Devuelve el objeto ya instanciondo de la calase logging.Logger
+        """
         return self.logger
     
