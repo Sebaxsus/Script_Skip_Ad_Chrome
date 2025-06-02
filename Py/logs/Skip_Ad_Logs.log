@@ -86,3 +86,10 @@ playwright._impl._errors.Error: Page.query_selector: Execution context was destr
 06-02 12:54 PM - Modules.Logger - Type: [INFO] - Msg: 🚪 Contexto o navegador cerrado.
 Anuncios Saltados: 4
 06-02 12:54 PM - Modules.Logger - Type: [INFO] - Msg: Se termino la ejecucion!
+06-02 01:23 PM - Modules.Logger - Type: [INFO] - Msg: Se inicializo el Logger!
+06-02 01:23 PM - Modules.Logger - Type: [INFO] - Msg: Se inicio Chrome con el Puerto de depuracion correctamente!
+06-02 01:23 PM - Modules.Logger - Type: [INFO] - Msg: Se conecto al WebSocket de CDP: http://localhost:9222/
+06-02 01:23 PM - Modules.Logger - Type: [WARNING] - Msg: ⚠️ El contexto de ejecución fue destruido. La página probablemente cambió o recargó. Reintentando en breve...
+06-02 01:23 PM - Modules.Logger - Type: [INFO] - Msg: 🚪 Contexto o navegador cerrado.
+Anuncios Saltados: 0
+06-02 01:23 PM - Modules.Logger - Type: [INFO] - Msg: Se termino la ejecucion!

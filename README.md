@@ -1,4 +1,4 @@
-# Este Proyecto esta pensado para automatizar el comportamiento de "Saltar" un anuncion en la Plataforma de YouTube
+# Este Proyecto esta pensado para automatizar el comportamiento de "Saltar" un anuncio en la Plataforma de YouTube
 
 > [!IMPORTANT]
 > **DISCLAIMER**
@@ -11,7 +11,78 @@
 >
 > Para poder utilizar una instancia de Chrome con el puerto de depuracion abierto con la Sesion de YouTube en Python puede llegar a usarse las **COOKIES** de tu sesion en YouTube.
 >
-> Por ende este **Aviso** se hace con la finalidad de **INFORMAR** que se pueden estar extrayendo las **COOKIES** de tu sesion local, Esto no quiere decir que se subira a la nube o se enviara a un servidor, Las Cookies se almacenan en la misma Carpeta del Proyecto Bajo el Directorio `./Extension_Skip_Ad_Chrome/DataText/youtube_cookies.json`.
+> Por ende este **Aviso** se hace con la finalidad de **INFORMAR** que se pueden estar extrayendo las **COOKIES** de tu sesion local, Esto **NO** quiere decir que se subira a la nube o se enviara a un servidor, Las Cookies se almacenan en la misma Carpeta del Proyecto Bajo el Directorio `./Extension_Skip_Ad_Chrome/DataText/youtube_cookies.json`.
+
+---
+
+## Tabla de Contenidos
+
+1. [Disclaimer.](#este-proyecto-esta-pensado-para-automatizar-el-comportamiento-de-saltar-un-anuncio-en-la-plataforma-de-youtube)
+2. [Tabla de Contenidos.](#tabla-de-contenidos)
+3. [Requisitos.](#Requisitos)
+4. [Instalación.](#Instalación)
+5. [Configuración.](#Configuración)
+
+---
+
+## Requisitos
+
+**Para ejecutar el script de AHK:**
+- Se necesita tener instalado en la maquina **HOST** [AutoHotKey V 2.0^](https://www.autohotkey.com/)
+
+**Para ejecutar el script de Python:**
+- Tener Python [3.12.0^](https://www.python.org/downloads/)
+- Tener un Navegador basado en **Chromium**
+- Poder Obtener la Ruta (Path) de el Ejecutable de tu navegador basado en **Chromium**
+- Poder activar el **Puerto de depuración remota**
+
+---
+
+## Instalación
+
+1. **Clona el repositorio**
+
+```bash
+git clone https://github.com/Sebaxsus/Script_Skip_Ad_Chrome.git
+cd Script_Ad_Chrome/
+```
+
+2. **Crear un Entorno Virtual**
+
+> [!TIP]
+>
+> Crear el entorno virtual es **OPCIONAL** pero es muy recomendable ya que
+> las librerias y dependencias se descargarian ahi, Esto permite mantener tu maquina segura en contra de vulnerabilidades que puedan tener las Librerias/Dependencias.
+
+```bash
+python -m venv .Nombre_del_entorno
+.Nombre_del_entorno\Scripts\activate
+```
+
+**Ó**
+
+```bash
+uv venv .Nombre_del_entorno
+.Nombre_del_entorno\Scripts\activate
+```
+
+3. **Instalar las dependencias**
+
+```bash
+:: Con un entorno virtal de Python.
+pip install -r requirements.txt
+
+:: Con un entorno virtual de UV
+uv pip install -r requirements.txt
+```
+
+---
+
+## Configuración
+
+Se debe definir las siguientes variables de entorno.
+
+---
 
 # To do
 - Toda la doc de Python y su Instalacion
