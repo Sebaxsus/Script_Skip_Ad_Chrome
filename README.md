@@ -80,14 +80,27 @@ uv pip install -r requirements.txt
 
 ## Configuración
 
-Se debe definir las siguientes variables de entorno.
+Se debe definir las siguientes variables de entorno `.env` o en `settings.py`:
+
+> [!TIP]
+>
+> Si se necesita verificar si esta instalado en la unidad/disco `C` Usa:
+>
+> ```bash
+>   where /r "c:\Program Files\Google\Chrome\Application" chrome.exe
+> ```
+
+- `CHROME_PATH`: La ruta absoluta al directorio en donde esta el ejecutable de chrome `chrome.exe`.
+- `CHROME_USER_DATA:`: La ruta absoluta al directorio en donde esta la Carpeta `ChromeDebug` **Normalmente esta a nivel de Unidad** `C:\ChromeDebug`.
+- `ENV_PATH`: **OPCIONAL** Ruta absoluta al ejecutable del entorno Virtual `Unidad:\Path\Entorno_Virtual\Scripts\python.exe`.
+- `SCRIPT_PATH`: **OPCIONAL** Ruta absoluta al `main.py` del proyecto.
 
 ---
 
 # To do
-- Toda la doc de Python y su Instalacion
-- Manual de Instalacion para AHK
-- Usar UV en lugar de `python -m venv` 🫠
+- [x] Toda la doc de Python y su Instalacion
+- [ ] Manual de Instalacion para AHK
+- [ ] Usar UV en lugar de `python -m venv` 🫠
 ## Tener En cuenta que el Script se Diseño para ser Usado en un Segunda Pantalla
 
 - Se requiere tener AHK 2.0^

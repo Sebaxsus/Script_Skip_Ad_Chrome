@@ -119,7 +119,7 @@ class Skip_Script:
         Autor: [Sebaxsus](https://github.com/Sebaxsus)
         """
         for context in browser.contexts:
-            self.logger.debug(f"Context: ", context.pages)
+            self.logger.debug(f"Context: {context.pages}")
             for page in context.pages:
                 if "youtube.com" in page.url:
                     return page
