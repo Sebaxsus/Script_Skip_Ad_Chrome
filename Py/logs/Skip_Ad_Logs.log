@@ -135,3 +135,89 @@ Traceback (most recent call last):
     hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 FileNotFoundError: [WinError 2] El sistema no puede encontrar el archivo especificado
+06-03 02:09 PM - Modules.Logger - Type: [INFO] - Msg: 🚪 Contexto o navegador cerrado.
+Anuncios Saltados: 11
+06-03 02:09 PM - Modules.Logger - Type: [INFO] - Msg: Se termino la ejecucion!
+06-09 07:46 PM - Modules.Logger - Type: [INFO] - Msg: Se inicializo el Logger!
+06-09 07:46 PM - Modules.Logger - Type: [INFO] - Msg: Se inicio Chrome con el Puerto de depuracion correctamente!
+06-26 02:04 AM - Modules.Logger - Type: [INFO] - Msg: Se inicializo el Logger!
+06-26 02:04 AM - Modules.Logger - Type: [INFO] - Msg: Se inicio Chrome con el Puerto de depuracion correctamente!
+06-26 02:04 AM - Modules.Logger - Type: [INFO] - Msg: Se conecto al WebSocket de CDP: http://localhost:9222/
+06-26 02:04 AM - Modules.Logger - Type: [WARNING] - Msg: ⚠️ El contexto de ejecución fue destruido. La página probablemente cambió o recargó. Reintentando en breve...
+06-26 03:54 AM - Modules.Logger - Type: [INFO] - Msg: 🚪 Contexto o navegador cerrado.
+Anuncios Saltados: 15
+06-26 03:54 AM - Modules.Logger - Type: [INFO] - Msg: Se termino la ejecucion!
+06-28 01:25 AM - Modules.Logger - Type: [INFO] - Msg: Se inicializo el Logger!
+06-28 01:25 AM - Modules.Logger - Type: [INFO] - Msg: Se inicio Chrome con el Puerto de depuracion correctamente!
+06-28 01:25 AM - Modules.Logger - Type: [INFO] - Msg: Se conecto al WebSocket de CDP: http://localhost:9222/
+06-28 02:32 AM - Modules.Logger - Type: [INFO] - Msg: 🚪 Contexto o navegador cerrado.
+Anuncios Saltados: 9
+06-28 02:32 AM - Modules.Logger - Type: [INFO] - Msg: Se termino la ejecucion!
+07-02 08:46 PM - Modules.Logger - Type: [INFO] - Msg: Se inicializo el Logger!
+07-02 08:46 PM - Modules.Logger - Type: [INFO] - Msg: Se inicio Chrome con el Puerto de depuracion correctamente!
+07-02 08:47 PM - Modules.Logger - Type: [INFO] - Msg: Se conecto al WebSocket de CDP: http://localhost:9222/
+07-02 08:47 PM - Modules.Logger - Type: [WARNING] - Msg: ⚠️ El contexto de ejecución fue destruido. La página probablemente cambió o recargó. Reintentando en breve...
+07-02 08:48 PM - Modules.Logger - Type: [INFO] - Msg: 🚪 Contexto o navegador cerrado.
+Anuncios Saltados: 1
+07-02 08:48 PM - Modules.Logger - Type: [INFO] - Msg: Se termino la ejecucion!
+09-09 04:01 PM - Modules.Logger - Type: [INFO] - Msg: Se inicializo el Logger!
+09-09 04:01 PM - Modules.Logger - Type: [INFO] - Msg: Se inicio Chrome con el Puerto de depuracion correctamente!
+09-09 04:02 PM - Modules.Logger - Type: [INFO] - Msg: Se conecto al WebSocket de CDP: http://localhost:9222/
+09-09 08:37 PM - Modules.Logger - Type: [ERROR] - Msg: ⚠️ Error al hacer clic:
+Traceback (most recent call last):
+  File "C:\Users\sebax\Desktop\Universidad\Proyectos_aleatorios\Extension_Skip_Ad_Chrome\Py\Modules\Skip_injection.py", line 82, in BuscarBoton
+    button.click()
+  File "C:\Users\sebax\Desktop\Universidad\Proyectos_aleatorios\Extension_Skip_Ad_Chrome\Py\EnvVirtual\Lib\site-packages\playwright\sync_api\_generated.py", line 2142, in click
+    self._sync(
+  File "C:\Users\sebax\Desktop\Universidad\Proyectos_aleatorios\Extension_Skip_Ad_Chrome\Py\EnvVirtual\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\sebax\Desktop\Universidad\Proyectos_aleatorios\Extension_Skip_Ad_Chrome\Py\EnvVirtual\Lib\site-packages\playwright\_impl\_element_handle.py", line 132, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\sebax\Desktop\Universidad\Proyectos_aleatorios\Extension_Skip_Ad_Chrome\Py\EnvVirtual\Lib\site-packages\playwright\_impl\_connection.py", line 61, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sebax\Desktop\Universidad\Proyectos_aleatorios\Extension_Skip_Ad_Chrome\Py\EnvVirtual\Lib\site-packages\playwright\_impl\_connection.py", line 528, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: ElementHandle.click: Element is not attached to the DOM
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    - waiting for element to be visible, enabled and stable
+    - element is not stable
+  2 × retrying click action
+      - waiting 100ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <input type="text" wfd-id="id0" role="combobox" autocorrect="off" aria-controls="i0" autocomplete="off" spellcheck="false" name="search_query" aria-expanded="true" placeholder="Buscar" aria-autocomplete="list" class="ytSearchboxComponentInput yt-searchbox-input title"/> from <div id="masthead-container" class="style-scope ytd-app">…</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+
+09-09 08:54 PM - Modules.Logger - Type: [INFO] - Msg: 🚪 Contexto o navegador cerrado.
+Anuncios Saltados: 37
+09-09 08:54 PM - Modules.Logger - Type: [INFO] - Msg: Se termino la ejecucion!
+09-13 11:58 PM - Modules.Logger - Type: [INFO] - Msg: Se inicializo el Logger!
+09-13 11:58 PM - Modules.Logger - Type: [INFO] - Msg: Se inicio Chrome con el Puerto de depuracion correctamente!
+09-13 11:58 PM - Modules.Logger - Type: [INFO] - Msg: Se conecto al WebSocket de CDP: http://localhost:9222/
+09-14 01:28 AM - Modules.Logger - Type: [INFO] - Msg: 🚪 Contexto o navegador cerrado.
+Anuncios Saltados: 16
+09-14 01:28 AM - Modules.Logger - Type: [INFO] - Msg: Se termino la ejecucion!
+09-28 10:04 PM - Modules.Logger - Type: [INFO] - Msg: Se inicializo el Logger!
+09-28 10:04 PM - Modules.Logger - Type: [INFO] - Msg: Se inicio Chrome con el Puerto de depuracion correctamente!
+09-28 10:04 PM - Modules.Logger - Type: [INFO] - Msg: Se conecto al WebSocket de CDP: http://localhost:9222/
+09-28 10:05 PM - Modules.Logger - Type: [WARNING] - Msg: ⚠️ El contexto de ejecución fue destruido. La página probablemente cambió o recargó. Reintentando en breve...
+09-29 01:01 AM - Modules.Logger - Type: [INFO] - Msg: 🚪 Contexto o navegador cerrado.
+Anuncios Saltados: 15
+09-29 01:01 AM - Modules.Logger - Type: [INFO] - Msg: Se termino la ejecucion!
+09-29 09:05 AM - Modules.Logger - Type: [INFO] - Msg: Se inicializo el Logger!
+09-29 09:05 AM - Modules.Logger - Type: [INFO] - Msg: Se inicio Chrome con el Puerto de depuracion correctamente!
+09-29 09:06 AM - Modules.Logger - Type: [INFO] - Msg: Se conecto al WebSocket de CDP: http://localhost:9222/
+09-29 03:20 PM - Modules.Logger - Type: [INFO] - Msg: 🚪 Contexto o navegador cerrado.
+Anuncios Saltados: 0
+09-29 03:20 PM - Modules.Logger - Type: [INFO] - Msg: Se termino la ejecucion!
